@@ -1,5 +1,7 @@
 # recipe-book
 
+A simple recipe viewer, lightweight enough to run on old, dusty tablets.
+
 ## Project setup
 ```
 npm install
