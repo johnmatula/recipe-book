@@ -2,16 +2,24 @@
   <div class="recipe">
     <h1>{{ recipe.title }}?</h1>
     <p>{{ recipe.id }}</p>
-    <p>{{ recipe.description }}</p>
+    <template v-for="(node, n) in textNodes">
+      <v-timer-button v-if="node.indexOf('{{') !== -1" :duration="node" :key="n"></v-timer-button>
+      <template v-else>{{node}}</template>
+    </template>
+    <v-timer-button :duration="10" :parsed="true">hellooo</v-timer-button>
   </div>
 </template>
 
 <script>
+import TimerButton from '@/components/TimerButton'
 export default {
   data() {
     return {
       recipe: {}
     }
+  },
+  components: {
+    'v-timer-button': TimerButton
   },
   created() {
     this.recipe = this.updateRecipeOrRedirect(this.$route.params.id)
@@ -19,6 +27,11 @@ export default {
   watch: {
     $route() {
       this.recipe = this.updateRecipeOrRedirect(this.$route.params.id)
+    }
+  },
+  computed: {
+    textNodes() {
+      return this.recipe.description.split(/({{[^}]+}})/)
     }
   },
   methods: {
