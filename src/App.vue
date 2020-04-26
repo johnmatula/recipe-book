@@ -1,32 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    temp nav... <router-link to="/recipe/quarantine-banana-bread">to banana bread</router-link> or <router-link to="/recipe/chicken-soup">to chicken soop</router-link>
+    <ListMain />
+    <ListBar />
+    <ContentMain />
+    <ContentBar />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import ContentBar from '@/views/ContentBar'
+import ContentMain from '@/views/ContentMain'
+import ListBar from '@/views/ListBar'
+import ListMain from '@/views/ListMain'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    ContentBar,
+    ContentMain,
+    ListBar,
+    ListMain
   }
 }
-</style>
+</script>
