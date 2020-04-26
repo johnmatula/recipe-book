@@ -1,6 +1,6 @@
 {
   "id": "quarantine-banana-bread",
   "title": "Quarantine Banana Bread",
-  "description": "A treat for one!",
+  "description": "A treat for one! Isn't it great to be <router-link to='/'>home</router-link>? Simmer for {{5 minutes}}. Simmer more for {{5-7 minutes}}",
   "format": "jvm"
 }
