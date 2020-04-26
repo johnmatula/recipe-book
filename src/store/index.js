@@ -3,8 +3,6 @@ import Vuex from 'vuex'
 
 const recipes = require.context("@/store/recipes",true,/.*\.json/i)
 
-console.log(recipes.keys())
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
